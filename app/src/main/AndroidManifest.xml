@@ -16,7 +16,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".SecondActivity" />
-        <activity android:name=".ThirdActivity"></activity>
+        <activity android:name=".ThirdActivity" />
+
+        <service
+            android:name=".FristService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".BindService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

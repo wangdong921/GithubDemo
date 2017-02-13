@@ -9,8 +9,8 @@ import android.util.Log;
 public class BindService extends Service {
 
     private static final String TAG = "BindService";
-    private int count;
-    private boolean quit;
+    private int count = 0;
+    private boolean quit = false;
 
     private MyBinder binder = new MyBinder();
 
@@ -32,12 +32,15 @@ public class BindService extends Service {
         new Thread() {
             @Override
             public void run() {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                while (!quit) {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    count++;
                 }
-                count++;
+
             }
         }.start();
     }

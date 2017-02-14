@@ -10,6 +10,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private Button startService;
     private Button stopService;
+    private Button startIntentService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         startService = (Button) findViewById(R.id.btn_start_service);
         stopService = (Button) findViewById(R.id.btn_stop_service);
+        startIntentService = (Button) findViewById(R.id.btn_start_intent_service);
 
         final Intent intent = new Intent(this,FristService.class);
 
@@ -32,6 +34,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 stopService(intent);
+            }
+        });
+
+        startIntentService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent inten = new Intent(MainActivity.this,MyIntentService.class);
+                startService(inten);
             }
         });
     }

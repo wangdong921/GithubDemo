@@ -2,6 +2,8 @@ package com.wangdong.githubdemo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -23,7 +25,9 @@ public class ThirdActivity extends AppCompatActivity {
         setContentView(R.layout.activity_third);
         initData();
         mRecyclerView = (RecyclerView) findViewById(R.id.rv_frist);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this,4));
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
         mAdapter = new MyRecyclerAdapter();
         mRecyclerView.setAdapter(mAdapter);
     }

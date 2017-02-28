@@ -10,9 +10,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
         <activity android:name=".SecondActivity" />
-        <activity android:name=".ThirdActivity">
-
-        </activity>
+        <activity android:name=".ThirdActivity" />
 
         <service
             android:name=".FristService"
@@ -26,14 +24,23 @@
             android:name=".MyIntentService"
             android:exported="false" />
 
-        <activity android:name=".EventBusActivity" >
+        <activity android:name=".EventBusActivity" />
+        <activity android:name=".ReceiveEventBusActivity" />
+        <activity android:name=".transparentActionActivity">
+
+        </activity>
+        <activity android:name=".ColorTranslucentBarActivity"
+            android:theme="@style/ColorTranslucentTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ReceiveEventBusActivity"></activity>
+        <activity android:name=".ImageTranslucentBarActivity"
+            android:label="@string/image_translucent_bar"
+            android:theme="@style/ImageTranslucentTheme">
+
+        </activity>
     </application>
 
 </manifest>
